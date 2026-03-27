@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://b7uudcctp0vf1"]
+
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_k456m"]
+[ext_resource type="Script" uid="uid://nlxxmnkjm1ci" path="res://scenes/SelecStage1.gd" id="2_1tbhu"]
+[ext_resource type="Texture2D" uid="uid://dwc8dd51xoi1h" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="2_eeirb"]
+[ext_resource type="Script" uid="uid://bdta5vpujdi8i" path="res://scenes/SelectStage2.gd" id="3_1tbhu"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=2029660046]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1662053683]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=251830757]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=418131505]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 44
+text = "Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=269994807]
+layout_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1167546754]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95249444, 0, 0.39166117, 1)
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 20
+text = "Stage 1"
+script = ExtResource("2_1tbhu")
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1218524528]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95249444, 0, 0.39166117, 1)
+theme_override_fonts/font = ExtResource("1_k456m")
+theme_override_font_sizes/font_size = 20
+text = "Stage 2"
+script = ExtResource("3_1tbhu")
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=486584690]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=996913817]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("2_eeirb")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_pressed_SelectStage1"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_pressed_SelectStage2"]

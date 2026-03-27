@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dydt4ykhfccbs"]
+
+[ext_resource type="FontFile" uid="uid://bpaegc6lsovqt" path="res://assets/Fonts/CC Wild Words Roman.ttf" id="1_2wh52"]
+[ext_resource type="Script" uid="uid://dqi5l4b1tgsuv" path="res://link_button.gd" id="2_ow34m"]
+[ext_resource type="Texture2D" uid="uid://dwc8dd51xoi1h" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="3_l72w3"]
+[ext_resource type="Script" uid="uid://djb28i8bjn2be" path="res://scenes/SelectStage.gd" id="3_ow34m"]
+
+[node name="MarginContainer" type="MarginContainer" unique_id=2029660046]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1662053683]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=251830757]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=418131505]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_2wh52")
+theme_override_font_sizes/font_size = 44
+text = "Game"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=269994807]
+layout_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1167546754]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95249444, 0, 0.39166117, 1)
+theme_override_fonts/font = ExtResource("1_2wh52")
+theme_override_font_sizes/font_size = 20
+text = "New Game"
+script = ExtResource("2_ow34m")
+scene_to_load = "Level 1"
+
+[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer" unique_id=1218524528]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95249444, 0, 0.39166117, 1)
+theme_override_fonts/font = ExtResource("1_2wh52")
+theme_override_font_sizes/font_size = 20
+text = "Select Stage"
+script = ExtResource("3_ow34m")
+scene_to_load = "StageSelect"
+
+[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer" unique_id=486584690]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/CenterContainer" unique_id=996913817]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 2
+texture = ExtResource("3_l72w3")
+expand_mode = 1
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton" method="_on_New_Game_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" to="HBoxContainer/VBoxContainer/VBoxContainer/LinkButton2" method="_on_New_SelectStage_Presssed"]
